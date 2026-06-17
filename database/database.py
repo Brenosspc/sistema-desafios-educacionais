@@ -19,4 +19,21 @@ CREATE TABLE IF NOT EXISTS desafios (
 )
 """)
 
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS pontuacoes (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    aluno_id INTEGER,
+    pontos INTEGER
+)
+""")
+
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS submissoes (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    aluno_id INTEGER,
+    desafio_id INTEGER,
+    resposta TEXT
+)
+""")
+
 conn.commit()
